@@ -10,5 +10,12 @@ spring:
     password: ${DB_PASSWORD}
   jpa:
     database: ${DB_TYPE}
+    database-platform: ${DB_DIALECT}
+    show-sql: true
+    hibernate:
+      ddl-auto: update
   profiles:
     active: dev
+logging:
+  level:
+    com.imadiaos.*: DEBUG
