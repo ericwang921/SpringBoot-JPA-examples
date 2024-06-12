@@ -12,7 +12,7 @@ public interface ISysUserService {
      * @param pageable 分页参数
      * @return 分页结果
      */
-    Page<SysUser> findByPage(Pageable pageable);
+    Page<SysUser> findByPage(SysUser user, Pageable pageable);
 
     List<SysUser> findAll();
 
@@ -20,9 +20,9 @@ public interface ISysUserService {
 
     SysUser findByUsername(String username);
 
-    SysUser save(SysUser sysUser);
+    SysUser save(SysUser user);
 
-    SysUser update(SysUser sysUser);
+    SysUser update(SysUser user);
 
     void deleteAll(List<String> ids);
 

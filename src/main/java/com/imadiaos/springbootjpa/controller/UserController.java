@@ -2,6 +2,8 @@ package com.imadiaos.springbootjpa.controller;
 
 import com.imadiaos.springbootjpa.data.model.SysUser;
 import com.imadiaos.springbootjpa.service.ISysUserService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,6 +16,11 @@ public class UserController {
 
     public UserController(ISysUserService userService) {
         this.userService = userService;
+    }
+
+    @GetMapping("getUserPage")
+    public Page<SysUser> getUserPage(@RequestBody SysUser user, Pageable pageable) {
+        return userService.findByPage(user, pageable);
     }
 
     @GetMapping("getAllUser")
