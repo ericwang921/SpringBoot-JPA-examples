@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: SpringBoot-JPA
+  config:
+    import: "env/config-${spring.profiles.active}.properties"
+  datasource:
+    driver-class-name: ${DB_CLASSNAME}
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    database: ${DB_TYPE}
+  profiles:
+    active: dev
