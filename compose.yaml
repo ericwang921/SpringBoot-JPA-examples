@@ -8,3 +8,4 @@ services:
       - 'MYSQL_USER=${MYSQL_USERNAME}'
     ports:
       - '${MYSQL_PUBLIC_PORT}:3306'
+    restart: always
